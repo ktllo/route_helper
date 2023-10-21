@@ -11,4 +11,49 @@ div.section {
     border-radius: 5px;
     border-style: solid;
     background-color: #fbd59d;
+    margin-top: 2ex;
+}
+div.section_ok_title {
+    font-size: large;
+    background-color: #33cc33;
+    border-radius: 5px;
+    padding : 5px;
+    font-weight: bold;
+}
+
+div.section_ok {
+    border-color: #33cc33;
+    border-radius: 5px;
+    border-style: solid;
+    background-color: #d6f5d6;
+    margin-top: 2ex;
+}
+div.section_no_title {
+    font-size: large;
+    background-color: #cc0000;
+    border-radius: 5px;
+    padding : 5px;
+    font-weight: bold;
+}
+
+div.section_no {
+    border-color: #cc0000;
+    border-radius: 5px;
+    border-style: solid;
+    background-color: #ff9999;
+    margin-top: 2ex;
+}
+
+div._warn {
+    background-color: #ff9999;
+    border-color: #cc0000;
+    border-radius: 5px;
+    border-style: solid;
+    color: #cc0000;
+    padding : 5px;
+    width: auto;
+}
+
+div.section_content {
+    padding-left: 1em;
 }
