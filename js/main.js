@@ -74,6 +74,7 @@ function _init(){
     );
     $('._hidden').hide();
     $('.section').hide();
+    $("#sect_0").show();
     $('#sect_1').show();
 }
 
