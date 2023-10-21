@@ -7,6 +7,14 @@ function _init(){
     }).click(
         function () {
             let route = $("#sec1_sel_route :selected").val();
+            if($("#sec1_tb_from").val().trim().length==0){
+                alert("Please enter from station");
+                return;
+            }
+            if($("#sec1_tb_from").val().trim().length==0){
+                alert("Please enter to station");
+                return;
+            }
             if(route === "4" || route === "5") {
                 alert("Please read the error message!");
                 return;
