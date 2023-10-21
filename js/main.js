@@ -1,4 +1,7 @@
 function _init(){
+    $('#sec0_but_1').button().click(function () {
+        $("#sect_0").hide();
+    });
     $('#sec1_but_cont').button({
         icon : "ui-icon-play"
     }).click(
@@ -20,10 +23,11 @@ function _init(){
             $("#sec1_sp_from").text($("#sec1_tb_from").val());
             $("#sec2_sp_1_f").text($("#sec1_tb_from").val());
             $("#sec2_sp_2_f").text($("#sec1_tb_from").val());
+            $("#sec1_sp_from").text($("#sec1_tb_from").val());
             $("#sec1_tb_from").hide();
             $("#sec2_sp_1_t").text($("#sec1_tb_to").val());
             $("#sec2_sp_2_t").text($("#sec1_tb_to").val());
-            $("#sec1_sp_from").text($("#sec1_tb_from").val());
+            $("#sec1_sp_to").text($("#sec1_tb_to").val());
             $("#sec1_tb_to").hide();
             $("#sec1_sel_route").hide();
             $("#sec1_tb_point").hide();
@@ -70,6 +74,7 @@ function _init(){
     );
     $('._hidden').hide();
     $('.section').hide();
+    $("#sect_0").show();
     $('#sect_1').show();
 }
 
