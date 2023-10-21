@@ -1,0 +1,14 @@
+div.section_title {
+    font-size: large;
+    background-color: #e78f08;
+    border-radius: 5px;
+    padding : 5px;
+    font-weight: bold;
+}
+
+div.section {
+    border-color: #e78f08;
+    border-radius: 5px;
+    border-style: solid;
+    background-color: #fbd59d;
+}
