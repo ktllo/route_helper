@@ -24,9 +24,17 @@ function _init(){
             } else if (route === "1") {
                 $("#sec1_sp_route").text("Any Permitted");
             } else if (route === "2") {
-                $("#sec1_sp_route").text("Via "+$("sec1_tb_point").val());
+                if($("#sec1_tb_point").val().trim().length==0){
+                    alert("Please enter via station");
+                    return;
+                }
+                $("#sec1_sp_route").text("Via "+$("#sec1_tb_point").val());
             } else if (route === "3") {
-                $("#sec1_sp_route").text("Not Via "+$("sec1_tb_point").val());
+                if($("#sec1_tb_point").val().trim().length==0){
+                    alert("Please enter not via station");
+                    return;
+                }
+                $("#sec1_sp_route").text("Not Via "+$("#sec1_tb_point").val());
             }
             $("#sec1_sp_from").text($("#sec1_tb_from").val());
             $("#sec2_sp_1_f").text($("#sec1_tb_from").val());
