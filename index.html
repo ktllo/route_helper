@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>GB National Rail Route Helper</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="js/jquery-ui.theme.css">
+        <link rel="stylesheet" href="js/jquery-ui.structure.css">
+        <link rel="stylesheet" href="js/jquery-ui.css">
+        <script src="js/jquery-3.7.1.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            $(window).on('load', function () {
+                $('#sec1_but_cont').button({
+                    icon : "ui-icon-play"
+                });
+                $('._hidden').hide();
+            })
+        </script>
+    </head>
+    <body>
+        <h1>Route planning helper</h1>
+        <!-- Step 1 -->
+        <div id="sect_1" class="section">
+            <div class="section_title">Step 1: Basic Information</div>
+            <div class="section_content">
+                <table>
+                    <tr>
+                        <th><label for="sec1_tb_from">From</label></th>
+                        <td><input type="text" id="sec1_tb_from"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="sec1_tb_to">To</label></th>
+                        <td><input type="text" id="sec1_tb_to"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="sec_sel_route">Route</label></th>
+                        <td>
+                            <select id="sec_sel_route">
+                                <option value="0">Please select one</option>
+                                <option value="1">Any Permitted</option>
+                                <option value="2">Via ...</option>
+                                <option value="3">Not via...</option>
+                                <option value="4">AAA ...</option>
+                                <option value="5">XXX Only/Booked Train Only/XXX +Connection</option>
+                            </select>
+                            <input id="sec1_tb_point" class="_hidden" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><div id="sec1_but_cont">Continue</div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
