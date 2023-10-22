@@ -40,13 +40,17 @@
                     <tr>
                         <th><label for="sec1_sel_route">Route</label></th>
                         <td>
+                            <input id="sec1_tb_toc" class="_hidden" type="text">
                             <select id="sec1_sel_route" onchange="sec_sel_route_change()">
                                 <option value="0">Please select one</option>
                                 <option value="1">Any Permitted</option>
+                                <option value="1">.</option>
                                 <option value="2">Via ...</option>
                                 <option value="3">Not via...</option>
                                 <option value="4">AAA ...</option>
                                 <option value="5">XXX Only/Booked Train Only/XXX +Connection</option>
+                                <option value="6">... Only</option>
+                                <option value="7">Not ...</option>
                             </select>
                             <input id="sec1_tb_point" class="_hidden" type="text">
                             <span id="sec1_sp_route">&nbsp;</span>
@@ -108,6 +112,7 @@
             <div class="section_no_title">Result</div>
             <div id="msg_no"></div>
         </div>
+        <div id="gen_but_restart">Start Again</div>
         <hr>
         <div style="text-align: center">
             <a href="https://github.com/ktllo/route_helper/issues">Bug Tracker</a>

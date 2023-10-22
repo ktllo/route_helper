@@ -2,6 +2,8 @@ function _init(){
     $('#sec0_but_1').button().click(function () {
         $("#sect_0").hide();
     });
+    $("#sect_1 input").val("");
+    $("#sec1_sel_route").val("0").change();
     $('#sec1_but_cont').button({
         icon : "ui-icon-play"
     }).click(
@@ -29,12 +31,28 @@ function _init(){
                     return;
                 }
                 $("#sec1_sp_route").text("Via "+$("#sec1_tb_point").val());
+                $("#sec2_sp_1_ex").text(" via "+$("#sec1_tb_point").val());
+                $("#sec2_sp_2_ex").text(" that calls at "+$("#sec1_tb_point").val());
             } else if (route === "3") {
                 if($("#sec1_tb_point").val().trim().length==0){
                     alert("Please enter not via station");
                     return;
                 }
                 $("#sec1_sp_route").text("Not Via "+$("#sec1_tb_point").val());
+                $("#sec2_sp_1_ex").text(" that does not travel via "+$("#sec1_tb_point").val());
+                $("#sec2_sp_2_ex").text(" that does not travel via "+$("#sec1_tb_point").val());
+            } else if (route === "6") {
+                if($("#sec1_tb_toc").val().trim().length==0){
+                    alert("Please enter train operator");
+                    return;
+                }
+                $("#sec1_sp_route").text($("#sec1_tb_toc").val()+" only");
+            } else if (route === "7") {
+                if($("#sec1_tb_point").val().trim().length==0){
+                    alert("Please enter train operator");
+                    return;
+                }
+                $("#sec1_sp_route").text("Not "+$("#sec1_tb_point").val());
             }
             $("#sec1_sp_from").text($("#sec1_tb_from").val());
             $("#sec2_sp_1_f").text($("#sec1_tb_from").val());
@@ -47,6 +65,7 @@ function _init(){
             $("#sec1_tb_to").hide();
             $("#sec1_sel_route").hide();
             $("#sec1_tb_point").hide();
+            $("#sec1_tb_toc").hide();
             $("#sec1_but_cont").hide();
             $("#sect_2").show();
         }
@@ -88,6 +107,11 @@ function _init(){
             $("#sec2_but_2_n").hide();
         }
     );
+    
+    
+    $("#gen_but_restart").button().click(function () {
+        location.reload();
+    })
     $('._hidden').hide();
     $('.section').hide();
     $("#sect_0").show();
@@ -98,17 +122,24 @@ function _init(){
 
 function sec_sel_route_change(){
     let newVal = $("#sec1_sel_route :selected").val();
-    $("#sec1_td_route ._hidden").hide();
+    $("#sec1_tb_point").hide();
+    $("#sec1_tb_toc").hide();
+    $("#sec1_tb_point").val();
+    $("#sec1_tb_toc").val();
     if (newVal === "0" || newVal === "1"){
-        $("#sec1_tb_point").hide();
+        // $("#sec1_tb_point").hide();
     } else if (newVal === "2" || newVal === "3") {
         $("#sec1_tb_point").show();
     } else if (newVal === "4") {
         $("#sec1_tb_point").show();
         $("#sec1_warn_aaa").show();
     } else if (newVal === "5") {
-        $("#sec1_tb_point").hide();
+        // $("#sec1_tb_point").hide();
         $("#sec1_warn_advance").show();
+    }  else if (newVal === "6") {
+        $("#sec1_tb_toc").show();
+    }  else if (newVal === "7") {
+        $("#sec1_tb_point").show();
     } else {
         console.error("[Step 1] Mismatched route type "+newVal)
     }
