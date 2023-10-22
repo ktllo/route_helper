@@ -92,6 +92,7 @@ function _init(){
     $('.section').hide();
     $("#sect_0").show();
     $('#sect_1').show();
+    sec_sel_route_change();
 }
 
 
